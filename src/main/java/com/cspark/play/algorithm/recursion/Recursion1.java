@@ -1,6 +1,6 @@
 package com.cspark.play.algorithm.recursion;
 
-public class Recursion {
+public class Recursion1 {
 
   /**
    * 0부터 n까지의 합

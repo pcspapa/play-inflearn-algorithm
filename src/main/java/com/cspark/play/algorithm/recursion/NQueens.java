@@ -11,7 +11,7 @@ public class NQueens {
   }
 
   public boolean queens(int level) {
-    if (!promising(level))
+    if (infeasible(level))
       return false;
     else if (level == N) {
       for (int i = 1; i <= N; i++) {
@@ -29,15 +29,15 @@ public class NQueens {
     return false;
   }
 
-  public boolean promising(int level) {
+  public boolean infeasible(int level) {
     for (int i = 1; i < level; i++) {
       if (cols[i] == cols[level])
-        return false;
+        return true;
       else if (level - i == Math.abs(cols[level] - cols[i]))
-        return false;
+        return true;
     }
 
-    return true;
+    return false;
   }
 
 }

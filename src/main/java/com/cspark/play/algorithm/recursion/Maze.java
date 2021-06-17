@@ -41,12 +41,6 @@ public class Maze {
     }
   }
 
-  public static void main(String[] args) {
-    printMaze();
-    findMazePath(0, 0);
-    printMaze();
-  }
-
   private static void printMaze() {
     for (int[] cols : maze) {
       for (int col : cols) {
@@ -55,6 +49,12 @@ public class Maze {
       System.out.println();
     }
     System.out.println();
+  }
+
+  public static void main(String[] args) {
+    printMaze();
+    findMazePath(0, 0);
+    printMaze();
   }
 
 }

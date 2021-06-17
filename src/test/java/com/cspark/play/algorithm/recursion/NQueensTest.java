@@ -6,11 +6,10 @@ import org.junit.jupiter.api.Test;
 
 class NQueensTest {
 
-
   @Test
   void putQueen() {
     NQueens nQueens = new NQueens(8);
-
     assertThat(nQueens.queens(0)).isTrue();
   }
+
 }

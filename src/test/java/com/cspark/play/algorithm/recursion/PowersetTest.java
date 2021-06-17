@@ -5,8 +5,14 @@ import org.junit.jupiter.api.Test;
 class PowersetTest {
 
   @Test
-  void powerset() {
-    Powerset powerset = new Powerset();
+  void powersetCase1() {
+    Powerset powerset = new Powerset(new char[]{'a', 'b', 'c', 'd', 'e', 'f'});
+    powerset.powerset(0);
+  }
+
+  @Test
+  void powersetCase2() {
+    Powerset powerset = new Powerset(new char[]{'a', 'b'});
     powerset.powerset(0);
   }
 }

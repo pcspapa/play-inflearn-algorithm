@@ -2,9 +2,15 @@ package com.cspark.play.algorithm.recursion;
 
 public class Powerset {
 
-  private static char[] data = {'a', 'b', 'c', 'd', 'e', 'f'};
-  private static int N = data.length;
-  private static boolean[] include = new boolean[N];
+  private final char[] data;
+  private final int N;
+  private final boolean[] include;
+
+  public Powerset(char[] data) {
+    this.data = data;
+    this.N = data.length;
+    this.include = new boolean[N];
+  }
 
   public void powerset(int k) {
     if (k == N) {

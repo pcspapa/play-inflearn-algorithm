@@ -16,21 +16,21 @@ class SortsTest {
 
   @Test
   void selection() {
-    Sorts.selection(data, 4);
+    Sorts.selection(data, 5);
 
     assertThat(data).isEqualTo(new int[]{1, 2, 3, 4, 5});
   }
 
   @Test
   void bubble() {
-    Sorts.bubble(data, 4);
+    Sorts.bubble(data, 5);
 
     assertThat(data).isEqualTo(new int[]{1, 2, 3, 4, 5});
   }
 
   @Test
   void insertion() {
-    Sorts.insertion(data, 4);
+    Sorts.insertion(data, 5);
 
     assertThat(data).isEqualTo(new int[]{1, 2, 3, 4, 5});
   }

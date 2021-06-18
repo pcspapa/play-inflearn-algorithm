@@ -3,7 +3,7 @@ package com.cspark.play.algorithm.sort;
 public class Sorts {
 
   public static void selection(int[] data, int n) {
-    for (int i = n; i > 0; i--) {
+    for (int i = n - 1; i > 0; i--) {
       int largest = i;
 
       int k = i - 1;
@@ -19,7 +19,7 @@ public class Sorts {
   }
 
   public static void bubble(int[] data, int n) {
-    for (int last = n; last > 0; last--) {
+    for (int last = n - 1; last > 0; last--) {
       for (int j = 0; j < last; j++) {
         if (data[j] > data[j + 1]) {
           swap(data, j, j + 1);
@@ -36,7 +36,7 @@ public class Sorts {
 
   public static void insertion(int[] data, int n) {
     int i, j, tmp;
-    for (i = 1; i <= n; i++) {
+    for (i = 1; i < n; i++) {
       tmp = data[i];
 
       for (j = i - 1; j >= 0 && data[j] > tmp; j--) {

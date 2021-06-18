@@ -28,12 +28,6 @@ public class Sorts {
     }
   }
 
-  private static void swap(int[] data, int i, int j) {
-    int tmp = data[i];
-    data[i] = data[j];
-    data[j] = tmp;
-  }
-
   public static void insertion(int[] data, int n) {
     int i, j, tmp;
     for (i = 1; i < n; i++) {
@@ -79,4 +73,34 @@ public class Sorts {
       data[l] = tmp[l];
   }
 
+  public static void quickSort(int[] data, int p, int r) {
+    if (p < r) {
+      int q = partition(data, p, r);
+      quickSort(data, p, q - 1);
+      quickSort(data, q + 1, r);
+    }
+  }
+
+  private static int partition(int[] data, int p, int r) {
+    int i = p - 1, j = p, pivot = data[r];
+
+    while (j < r) {
+      if (data[j] > pivot)
+        j++;
+      else {
+        i++;
+        swap(data, i, j);
+        j++;
+      }
+    }
+    swap(data, i + 1, r);
+
+    return i + 1;
+  }
+
+  private static void swap(int[] data, int i, int j) {
+    int tmp = data[i];
+    data[i] = data[j];
+    data[j] = tmp;
+  }
 }

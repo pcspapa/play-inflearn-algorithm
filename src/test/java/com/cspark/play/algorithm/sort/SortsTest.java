@@ -42,4 +42,11 @@ class SortsTest {
     assertThat(data).isEqualTo(new int[]{1, 2, 3, 4, 5});
   }
 
+  @Test
+  void quickSort() {
+    Sorts.quickSort(data, 0, 4);
+
+    assertThat(data).isEqualTo(new int[]{1, 2, 3, 4, 5});
+  }
+
 }

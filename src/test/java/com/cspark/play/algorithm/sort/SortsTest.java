@@ -28,4 +28,11 @@ class SortsTest {
     assertThat(data).isEqualTo(new int[]{1, 2, 3, 4, 5});
   }
 
+  @Test
+  void insertion() {
+    Sorts.insertion(data, 4);
+
+    assertThat(data).isEqualTo(new int[]{1, 2, 3, 4, 5});
+  }
+
 }

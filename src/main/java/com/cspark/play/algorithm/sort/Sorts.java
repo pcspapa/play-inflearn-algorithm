@@ -18,21 +18,32 @@ public class Sorts {
     }
   }
 
-  private static void swap(int[] data, int i, int j) {
-    int tmp = data[i];
-    data[i] = data[j];
-    data[j] = tmp;
-  }
-
   public static void bubble(int[] data, int n) {
-    for (int last = n ; last > 0; last--) {
+    for (int last = n; last > 0; last--) {
       for (int j = 0; j < last; j++) {
         if (data[j] > data[j + 1]) {
           swap(data, j, j + 1);
         }
       }
     }
+  }
 
+  private static void swap(int[] data, int i, int j) {
+    int tmp = data[i];
+    data[i] = data[j];
+    data[j] = tmp;
+  }
+
+  public static void insertion(int[] data, int n) {
+    int i, j, tmp;
+    for (i = 1; i <= n; i++) {
+      tmp = data[i];
+
+      for (j = i - 1; j >= 0 && data[j] > tmp; j--) {
+        data[j + 1] = data[j];
+      }
+      data[j + 1] = tmp;
+    }
   }
 
 }

@@ -35,4 +35,11 @@ class SortsTest {
     assertThat(data).isEqualTo(new int[]{1, 2, 3, 4, 5});
   }
 
+  @Test
+  void mergeSort() {
+    Sorts.mergeSort(data, 0, 4);
+
+    assertThat(data).isEqualTo(new int[]{1, 2, 3, 4, 5});
+  }
+
 }

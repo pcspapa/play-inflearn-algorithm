@@ -2,8 +2,8 @@ package com.cspark.play.algorithm.sort;
 
 public class Sorts {
 
-  public static void selection(int[] data) {
-    for (int i = data.length - 1; i > 0; i--) {
+  public static void selection(int[] data, int n) {
+    for (int i = n; i > 0; i--) {
       int largest = i;
 
       int k = i - 1;
@@ -18,10 +18,21 @@ public class Sorts {
     }
   }
 
-  private static void swap(int[] data, int largest, int i) {
+  private static void swap(int[] data, int i, int j) {
     int tmp = data[i];
-    data[i] = data[largest];
-    data[largest] = tmp;
+    data[i] = data[j];
+    data[j] = tmp;
+  }
+
+  public static void bubble(int[] data, int n) {
+    for (int last = n ; last > 0; last--) {
+      for (int j = 0; j < last; j++) {
+        if (data[j] > data[j + 1]) {
+          swap(data, j, j + 1);
+        }
+      }
+    }
+
   }
 
 }

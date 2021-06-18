@@ -16,7 +16,14 @@ class SortsTest {
 
   @Test
   void selection() {
-    Sorts.selection(data);
+    Sorts.selection(data, 4);
+
+    assertThat(data).isEqualTo(new int[]{1, 2, 3, 4, 5});
+  }
+
+  @Test
+  void bubble() {
+    Sorts.bubble(data, 4);
 
     assertThat(data).isEqualTo(new int[]{1, 2, 3, 4, 5});
   }

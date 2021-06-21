@@ -98,6 +98,52 @@ public class Sorts {
     return i + 1;
   }
 
+  public static void heap(int[] data, int n) {
+    buildMaxHeap(data);
+
+    for (int i = n; i > 0; i--) {
+      swap(data, 0, i - 1);
+      maxHeapify(data, 1, i - 1);
+    }
+  }
+
+  public static void buildMaxHeap(int[] data) {
+    int last = data.length / 2;
+    for (int n = last; n > 0; n--) {
+      maxHeapify(data, n, data.length);
+    }
+  }
+
+  public static void maxHeapify(int[] data, int n, int heapSize) {
+    if (nonChild(heapSize, n)) {
+      return;
+    }
+
+    int left = n * 2;
+    int right = n * 2 + 1;
+
+    int big;
+    if (nonRight(heapSize, right)) {
+      big = left;
+    } else {
+      big = data[left - 1] > data[right - 1] ? left : right;
+    }
+
+    if (data[n - 1] > data[big - 1])
+      return;
+
+    swap(data, big - 1, n - 1);
+    maxHeapify(data, big + 1, heapSize - 1);
+  }
+
+  private static boolean nonRight(int heapSize, int right) {
+    return right > heapSize;
+  }
+
+  public static boolean nonChild(int length, int n) {
+    return n > length / 2;
+  }
+
   private static void swap(int[] data, int i, int j) {
     int tmp = data[i];
     data[i] = data[j];

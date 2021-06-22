@@ -144,6 +144,26 @@ public class Sorts {
     return n > length / 2;
   }
 
+
+  public static void countingSort(int[] data, int[] bucket, int k) {
+    int[] counting = new int[k];
+
+    for (int i = 0; i < data.length; i++) {
+      counting[data[i]]++;
+    }
+
+    for (int i = 1; i < counting.length; i++) {
+      counting[i] = counting[i - 1] + counting[i];
+    }
+
+    for (int i = data.length - 1; i >= 0; i--) {
+      bucket[counting[data[i]] - 1] = data[i];
+      counting[data[i]]--;
+    }
+
+  }
+
+
   private static void swap(int[] data, int i, int j) {
     int tmp = data[i];
     data[i] = data[j];
